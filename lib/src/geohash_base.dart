@@ -188,8 +188,8 @@ class Geohash {
   /// Get a single number that is the center of a specific geohas rectangle.
   static Point<double> decode(String geohash) {
     final extents = getExtents(geohash);
-    final x = extents.left + extents.width / 2;
-    final y = extents.bottom + extents.height / 2;
+    final x = extents.left - extents.width / 2;
+    final y = extents.bottom - extents.height / 2;
     return new Point<double>(x, y);
   }
 }
